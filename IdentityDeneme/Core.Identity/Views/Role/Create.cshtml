@@ -1,0 +1,20 @@
+﻿@model RoleCreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Create" asp-controller="Role" method="post">
+    <div class="mb-3">
+        <label>Kullanıcı Adı</label>
+        <span class="text-danger" asp-validation-for="@Model.Name"></span>
+        <input asp-for="@Model.Name" class="form-control" />
+    </div>    
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly">
+
+    </div>
+</form>
+

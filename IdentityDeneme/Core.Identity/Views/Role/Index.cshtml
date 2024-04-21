@@ -1,0 +1,27 @@
+﻿@model List<AppRole>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p class="lead">
+    Rol Listesi
+</p>
+<a asp-action="Create" asp-controller="Role">Yeni Rol Ekle</a>
+<table class="table table-hovered table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Rol</th>
+            <th>Oluşturulma Zamanı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CreatedTime</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
